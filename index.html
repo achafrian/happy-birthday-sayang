@@ -313,9 +313,11 @@ body{
 Untuk perempuan paling spesial dalam hidupku ❤️
 </h2>
 
-<button class="btn" onclick="openSurprise()">
-Buka Birthday Surprise 🎁
-</button>
+<div id="welcome">
+    <button onclick="startExperience()">
+        🎁 Open Birthday Surprise
+    </button>
+</div>
 
 </section>
 
@@ -426,65 +428,47 @@ Made with ❤️ especially for you
 
 <script>
 
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
 function openSurprise(){
 
-    music.play().catch(()=>{});
+  createConfetti();
 
-    musicBtn.innerHTML = "🎵 Music On";
+  document.querySelectorAll('.section')[1]
+  .scrollIntoView({
+      behavior:'smooth'
+  });
 
-    createConfetti();
-
-    document.querySelectorAll('.section')[1]
-    .scrollIntoView({
-        behavior:'smooth'
-    });
 }
-
-musicBtn.addEventListener("click",()=>{
-
-    if(music.paused){
-
-        music.play();
-
-        musicBtn.innerHTML="🎵 Music On";
-
-    }else{
-
-        music.pause();
-
-        musicBtn.innerHTML="🔇 Music Off";
-
-    }
-
-});
 
 function createConfetti(){
 
-    for(let i=0;i<120;i++){
+  for(let i=0;i<120;i++){
 
-        let c=document.createElement('div');
+    let c=document.createElement('div');
 
-        c.classList.add('confetti');
+    c.classList.add('confetti');
 
-        c.style.left=Math.random()*100+'vw';
+    c.style.left=Math.random()*100+'vw';
 
-        c.style.background=
-        ['#ff4f9a','#ff8cc6','#ffc7df','#ff69b4']
-        [Math.floor(Math.random()*4)];
+    c.style.background=
+      ['#ff4f9a','#ff8cc6','#ffc7df','#ff69b4']
+      [Math.floor(Math.random()*4)];
 
-        c.style.animationDuration=
-        (Math.random()*3+2)+'s';
+    c.style.animationDuration=
+      (Math.random()*3+2)+'s';
 
-        document.body.appendChild(c);
+    document.body.appendChild(c);
 
-        setTimeout(()=>{
-            c.remove();
-        },5000);
+    setTimeout(()=>{
+      c.remove();
+    },5000);
+  }
+}
 
-    }
+function startExperience(){
+
+    document.getElementById("bgMusic").play();
+
+    document.getElementById("welcome").style.display="none";
 
 }
 
