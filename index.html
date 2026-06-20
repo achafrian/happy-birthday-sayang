@@ -214,8 +214,171 @@ body{
 }
 
 /* Mobile */
+/* MEMORY WALL */
+
+.memory-wall{
+
+    position:relative;
+    width:100%;
+    max-width:1200px;
+
+    height:950px;
+    margin:auto;
+}
+
+.polaroid{
+
+    position:absolute;
+
+    width:220px;
+    height:260px;
+
+    background:white;
+
+    padding:10px;
+    border-radius:10px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+    animation:floatPhoto 6s ease-in-out infinite;
+}
+
+.polaroid:hover{
+
+    transform:
+    scale(1.15)
+    rotate(0deg);
+
+    z-index:999;
+}
+
+.polaroid img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    border-radius:5px;
+}
+
+/* POSISI FOTO */
+
+.p1{
+    top:20px;
+    left:50px;
+    transform:rotate(-12deg);
+}
+
+.p2{
+    top:100px;
+    left:320px;
+    transform:rotate(8deg);
+}
+
+.p3{
+    top:30px;
+    right:120px;
+    transform:rotate(-8deg);
+}
+
+.p4{
+    top:320px;
+    left:80px;
+    transform:rotate(10deg);
+}
+
+.p5{
+    top:280px;
+    left:400px;
+    transform:rotate(-6deg);
+}
+
+.p6{
+    top:300px;
+    right:50px;
+    transform:rotate(12deg);
+}
+
+.p7{
+    top:580px;
+    left:30px;
+    transform:rotate(-10deg);
+}
+
+.p8{
+    top:560px;
+    left:320px;
+    transform:rotate(7deg);
+}
+
+.p9{
+    top:580px;
+    right:120px;
+    transform:rotate(-7deg);
+}
+
+.p10{
+    top:770px;
+    left:180px;
+    transform:rotate(8deg);
+}
+
+.p11{
+    top:760px;
+    left:520px;
+    transform:rotate(-10deg);
+}
+
+.p12{
+    top:760px;
+    right:120px;
+    transform:rotate(12deg);
+}
+
+@keyframes floatPhoto{
+
+    0%{
+        translate:0 0;
+    }
+
+    50%{
+        translate:0 -12px;
+    }
+
+    100%{
+        translate:0 0;
+    }
+}
 
 @media(max-width:768px){
+  .memory-wall{
+
+    height:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+}
+
+.polaroid{
+
+    position:relative;
+
+    width:100%;
+    height:220px;
+
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+
+    transform:none !important;
+}
 
   .section{
     min-height:auto;
@@ -328,14 +491,20 @@ Aku sayang kamu ❤️
 
 <h2 class="title">📸 Our Memories</h2>
 
-<div class="gallery">
+<div class="memory-wall">
 
-<div class="photo"><img src="foto1.jpg" loading="lazy"></div>
-<div class="photo"><img src="foto2.jpg" loading="lazy"></div>
-<div class="photo"><img src="foto3.jpg" loading="lazy"></div>
-<div class="photo"><img src="foto4.jpg" loading="lazy"></div>
-<div class="photo"><img src="foto5.jpg" loading="lazy"></div>
-<div class="photo"><img src="foto6.jpg" loading="lazy"></div>
+<div class="polaroid p1"><img src="foto1.jpg"></div>
+<div class="polaroid p2"><img src="foto2.jpg"></div>
+<div class="polaroid p3"><img src="foto3.jpg"></div>
+<div class="polaroid p4"><img src="foto4.jpg"></div>
+<div class="polaroid p5"><img src="foto5.jpg"></div>
+<div class="polaroid p6"><img src="foto6.jpg"></div>
+<div class="polaroid p7"><img src="foto7.jpg"></div>
+<div class="polaroid p8"><img src="foto8.jpg"></div>
+<div class="polaroid p9"><img src="foto9.jpg"></div>
+<div class="polaroid p10"><img src="foto10.jpg"></div>
+<div class="polaroid p11"><img src="foto11.jpg"></div>
+<div class="polaroid p12"><img src="foto12.jpg"></div>
 
 </div>
 
